@@ -1,5 +1,6 @@
 package br.com.fiap.aboutme
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,9 +23,12 @@ class MainActivity : AppCompatActivity() {
         //R = pasta Res de Resources
 
         //armazenos elementos em variaveis do tipo do elemento
+
+        //deve-se sempre colocar o tipo do elemento no var se nao da erro
         val button:Button = findViewById(R.id.buttonProfissao)
         val textViewProfissao:TextView = findViewById(R.id.textViewProfissao)
         val editTextProfissao:EditText = findViewById(R.id.editProfissao)
+        val botaoEditar:Button = findViewById(R.id.buttonEditar)
 
         //ao clicar no botao algo vai acontecer
         button.setOnClickListener {
@@ -62,7 +66,14 @@ class MainActivity : AppCompatActivity() {
             button.visibility = View.VISIBLE
             editTextProfissao.visibility = View.VISIBLE
         }
+
+        botaoEditar.setOnClickListener {
+            //ao clicar abre outra tela (editActivity)
+
+            //Intent - recebe um contexto e a classe (em java) por isso o class.java
+            val intent = Intent(this, EditActivity::class.java)
+            startActivity(intent);
+        }
+
     }
-
-
 }

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,38 +15,47 @@
         android:padding="16dp"
         android:animateLayoutChanges="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/img_avatar" />
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:textColor="@color/black"
-                android:text="@string/nome_usuario"
-                />
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/img_avatar" />
 
-            <TextView
-                android:id="@+id/textViewProfissao"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/profissao"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp">
 
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:textColor="@color/black"
+                        android:text="@string/nome_usuario"
+                        />
+
+                    <TextView
+                        android:id="@+id/textViewProfissao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profissao"
+                        />
+
+                    <Button
+                        android:id="@+id/buttonEditar"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/button_text"
+                        android:text="EDITAR"
+                        android:layout_gravity="left" />
+
+            </LinearLayout>
 
     </LinearLayout>
 
@@ -54,8 +64,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="@string/hint_profissao"
-            />
+            android:hint="@string/hint_editar"
+            android:text="EDITAR"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/buttonProfissao"
@@ -63,7 +74,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/button_text" />
+            android:text="@string/button_text"
+            android:visibility="gone"/>
 
 
         <TextView
@@ -71,6 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bio" />
-</LinearLayout>
+
+     </LinearLayout>
 
 </ScrollView>
